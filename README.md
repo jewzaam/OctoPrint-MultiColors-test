@@ -2,7 +2,7 @@ For: https://github.com/MoonshineSG/OctoPrint-MultiColors
 
 # Purpose
 
-Create this project with a python test to check that the regex gives me the output I want.  It was taking too long to use the plugin by uploading gcode, modifying, download, diff, and repeat.  This is hopefully going to make it much easier by plugging in the starting gcode, patter, replacement gcode, and expected results.
+Create this project with a python test to check that the regex gives me the output I want.  It was taking too long to use the plugin by uploading gcode, modifying, download, diff, and repeat.  This is hopefully going to make it much easier by plugging in the starting gcode, pattern, replacement gcode, and expected results.
 
 # Results: My Settings
 
