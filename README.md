@@ -10,7 +10,7 @@ I slice with Slic3r and have enabled verbose GCODE.  I found GOCDE to move the h
 
 The trick is to get the retract, extrucsion reset, and Z change captured in a group so you can replay it.
 
-My regex:  `(.*layer [(]{0}[)])\n(G1 X.*move.*)\n(G1 E([\d.]*) F([\d.]*)[; ]*.*unretract)`
+My regex:  `(.*layer [(]{layer}[)])\n(G1 X.*move.*)\n(G1 E([\d.]*) F([\d.]*)[; ]*.*unretract)`
 
 My GCODE: 
 
