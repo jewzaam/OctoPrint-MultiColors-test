@@ -6,13 +6,13 @@ import mmap
 
 layer = 5
 
-pattern = "(.*layer [(]{0}[)])\n(G1 X.*move.*)\n(G1 E([\d.]*) F([\d.]*)[; ]*.*unretract)".format(int(layer))
+pattern = "(.*layer [(]{0}[)])\n(G1 X.*move.*)\n(G1 E([\d.]*) F([\d.]*)[; ]*.*unretract.*)".format(int(layer))
 
-before = """G1 E260.93009 F1800.00000 ; retract
+before = """G1 E260.93009 F1800.00000 ; retract extruder 0
 G92 E0 ; reset extrusion distance
 G1 Z1.400 F9600.000 ; move to next layer (5)
 G1 X191.735 Y167.287 F9600.000 ; move to first perimeter point
-G1 E1.90000 F1800.00000 ; unretract
+G1 E1.90000 F1800.00000 ; unretract extruder 0
 M204 S1200 ; adjust acceleration"""
 
 gcode = """; PAUSE
@@ -37,11 +37,11 @@ G92 E0 ; reset extrusion distance
 \\2
 \\4"""
 
-expected = """G1 E260.93009 F1800.00000 ; retract
+expected = """G1 E260.93009 F1800.00000 ; retract extruder 0
 G92 E0 ; reset extrusion distance
 G1 Z1.400 F9600.000 ; move to next layer (5)
 G1 X191.735 Y167.287 F9600.000 ; move to first perimeter point
-G1 E1.90000 F1800.00000 ; unretract
+G1 E1.90000 F1800.00000 ; unretract extruder 0
 ; multi color
 ; PAUSE
 M117 Color Change
@@ -63,7 +63,7 @@ M82 ; Set extruder to Absolute Mode
 G92 E0 ; reset extrusion distance
 G1 X191.735 Y167.287 F9600.000 ; move to first perimeter point
 G1 Z1.400 F9600.000 ; move to next layer (5)
-G1 E1.90000 F1800.00000 ; unretract
+G1 E1.90000 F1800.00000 ; unretract extruder 0
 
 M204 S1200 ; adjust acceleration"""
 
